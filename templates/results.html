@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <p>HARSHITHA Gokanakonda</p>
+    <p>ID:1001949798</p>
+    <h1>Search Results</h1>
+    {% if results %}
+        {% for doc_id, matching_lines in results.items() %}
+            <h2>Document {{ doc_id }}</h2>
+            <ul>
+                {% for line in matching_lines %}
+                    <li>{{ line }}</li>
+                {% endfor %}
+            </ul>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+    <a href="/">Back to Search</a>
+</body>
+</html>
+
+
+
+
